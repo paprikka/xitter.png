@@ -20,6 +20,7 @@ app.get("/screenshot/:tweetId", async (req, res) => {
   console.log("Launch a headless browser");
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 2 });
 
   try {
     console.log("Go to the tweet page");

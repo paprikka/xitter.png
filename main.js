@@ -3,6 +3,11 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 
+if (!process.env.API_KEY) {
+  console.error("API_KEY is not set in the environment variables");
+  process.exit(1);
+}
+
 const app = express();
 const PORT = 3000;
 
